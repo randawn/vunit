@@ -135,7 +135,7 @@ begin
   test_runner : process
     procedure banner (
       constant s : in string) is
-      variable dashes : string(1 to 256) := (others => '-');
+      constant dashes : string(1 to 256) := (others => '-');
     begin
       info(dashes(s'range) & LF & s & LF & dashes(s'range) & LF);
     end banner;
@@ -198,8 +198,6 @@ begin
     variable i : natural;
     variable n_run_a, n_run_b, n_run_c : natural := 0;
     variable t_start : time;
-    variable test_trace_logger : logger_t;
-    variable test_trace_logger_cfg : logger_cfg_export_t;
     variable log_entries : line_vector(1 to 100);
     variable test_checker : checker_t;
     variable c : checker_t;

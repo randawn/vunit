@@ -167,7 +167,6 @@ package body run_pkg is
   impure function enabled (
     constant name : string)
     return boolean is
-    variable i : natural := 1;
   begin
     if get_run_all then
       return true;
